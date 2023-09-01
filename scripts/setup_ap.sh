@@ -26,7 +26,7 @@ setup () {
 
 	if test -d /etc/NetworkManager; then
 		echo "Stopping NetworkManager..."
-		sudo service network-manager stop
+		sudo systemctl stop NetworkManager
 	fi
 
 	echo "Configuring AP interface..."
@@ -62,7 +62,7 @@ cleanup () {
 
 	if test -d /etc/NetworkManager; then
 		echo "Restarting NetworkManager..."
-		sudo service network-manager restart
+		sudo systemctl restart NetworkManager
 	fi
 }
 
